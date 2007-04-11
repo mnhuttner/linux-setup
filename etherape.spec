@@ -1,6 +1,6 @@
 Name:           etherape
 Version:        0.9.7 
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -85,6 +85,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Wed Apr 11 2007 Michael Rice <errr[AT]errr-online.com> - 0.9.7-5
+- Rebuild to get all matching version from FC-5 .. devel
+
 * Mon Feb 12 2007 Michael Rice <errr[AT]errr-online.com> - 0.9.7-4
 - Fix desktop file install
 
