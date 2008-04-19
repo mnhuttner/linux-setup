@@ -1,12 +1,14 @@
 Name:           etherape
 Version:        0.9.7 
-Release:        6%{?dist}
+Release:        8%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
 License:        GPL
 URL:            http://etherape.sourceforge.net/
 Source0:        http://umn.dl.sourceforge.net/sourceforge/etherape/%{name}-%{version}.tar.gz
+Source1:        etherape.pam
+Source2:        etherape.console
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libpcap-devel, libglade2-devel
@@ -23,13 +25,21 @@ EtherApe is a graphical network monitor modeled after etherman.
 
 
 %build
-%configure
+%configure --bindir=%{_sbindir}
 make %{?_smp_mflags}
 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+
+mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/pam.d
+install -m 644 %{SOURCE1} $RPM_BUILD_ROOT/%{_sysconfdir}/pam.d/etherape
+mkdir -p $RPM_BUILD_ROOT/%{_sysconfdir}/security/console.apps
+install -m 644 %{SOURCE2} $RPM_BUILD_ROOT/%{_sysconfdir}/security/console.apps/etherape
+mkdir -p $RPM_BUILD_ROOT/%{_bindir}
+ln -s consolehelper $RPM_BUILD_ROOT/%{_bindir}/etherape
+
 %find_lang %{name}
 desktop-file-install --vendor "fedora"  --dir ${RPM_BUILD_ROOT}%{_datadir}/applications \
     ${RPM_BUILD_ROOT}%{_datadir}/applications/etherape.desktop
@@ -43,11 +53,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc ABOUT-NLS AUTHORS ChangeLog COPYING FAQ NEWS OVERVIEW README README.bugs README.help README.thanks TODO
 
+
 %{_bindir}/etherape
+%{_sbindir}/etherape
 
 %dir %{_sysconfdir}/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}/services
-
+%config(noreplace) %{_sysconfdir}/pam.d/etherape
+%config(noreplace) %{_sysconfdir}/security/console.apps/etherape
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/doc
 %dir %{_datadir}/%{name}/doc/%{name}
@@ -85,6 +98,12 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Sat Apr 19 2008 Michael Rice <errr@errr-online.com> - 0.9.7-8
+- fix ln -s 
+
+* Sat Apr 19 2008 Michael Rice <errr[AT]errr-online.com> - 0.9.7-7
+- Fix #442131 problems running as non root
+
 * Mon Feb 18 2008 Fedora Release Engineering <rel-eng@fedoraproject.org> - 0.9.7-6
 - Autorebuild for GCC 4.3
 
