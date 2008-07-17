@@ -1,10 +1,10 @@
 Name:           etherape
 Version:        0.9.7 
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
-License:        GPL
+License:        GPLv2+
 URL:            http://etherape.sourceforge.net/
 Source0:        http://umn.dl.sourceforge.net/sourceforge/etherape/%{name}-%{version}.tar.gz
 Source1:        etherape.pam
@@ -98,6 +98,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Thu Jul 17 2008 Tom "spot" Callaway <tcallawa@redhat.com> - 0.9.7-9
+- fix license tag
+
 * Sat Apr 19 2008 Michael Rice <errr@errr-online.com> - 0.9.7-8
 - fix ln -s 
 
