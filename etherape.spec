@@ -1,6 +1,6 @@
 Name:           etherape
 Version:        0.9.7 
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -98,6 +98,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Tue Feb 24 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.7-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
+
 * Thu Jul 17 2008 Tom "spot" Callaway <tcallawa@redhat.com> - 0.9.7-9
 - fix license tag
 
