@@ -1,6 +1,6 @@
 Name:           etherape
-Version:        0.9.7 
-Release:        12%{?dist}
+Version:        0.9.12
+Release:        1%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -13,6 +13,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libpcap-devel, libglade2-devel
 BuildRequires:  gettext, desktop-file-utils, libgnomeui-devel 
+BuildRequires:  gnome-doc-utils
 BuildRequires:  scrollkeeper
 Requires(post): scrollkeeper
 Requires(postun): scrollkeeper
@@ -51,39 +52,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc ABOUT-NLS AUTHORS ChangeLog COPYING FAQ NEWS OVERVIEW README README.bugs README.help README.thanks TODO
+%doc ABOUT-NLS AUTHORS ChangeLog COPYING FAQ NEWS OVERVIEW README README.bugs TODO
 
 
 %{_bindir}/etherape
 %{_sbindir}/etherape
-
 %dir %{_sysconfdir}/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}/services
 %config(noreplace) %{_sysconfdir}/pam.d/etherape
 %config(noreplace) %{_sysconfdir}/security/console.apps/etherape
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/doc
-%dir %{_datadir}/%{name}/doc/%{name}
-%dir %{_datadir}/%{name}/doc/%{name}/C
-%{_datadir}/%{name}/doc/%{name}/C/etherape.xml
-%dir %{_datadir}/%{name}/doc/%{name}/C/figures
-%{_datadir}/%{name}/doc/%{name}/C/figures/appmain.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/capture_file_dlg.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/color_select_dlg.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/eth_toolbar.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/link_info.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/node_info.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/pref_colors_dlg.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/pref_diagram_dlg.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/pref_timings_dlg.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/proto_info.png
-%{_datadir}/%{name}/doc/%{name}/C/figures/protocol_edit_dlg.png
-%dir %{_datadir}/%{name}/glade
-%{_datadir}/%{name}/glade/etherape.glade2
-%{_datadir}/%{name}/glade/etherape.png
-%{_datadir}/%{name}/glade/pause.xpm
-%{_datadir}/%{name}/glade/play.xpm
-%{_datadir}/%{name}/glade/stop.xpm
+%{_datadir}/gnome/help/%{name}/
+%{_datadir}/%{name}/
 %{_datadir}/applications/fedora-etherape.desktop
 %{_datadir}/pixmaps/etherape.png
 %dir %{_datadir}/omf/etherape
@@ -98,6 +78,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Mon Jul 18 2011 Jan F. Chadima <jchadima@redhat.com> 0.9.12-1
+- Upgrade to 0.9.12
+
 * Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.7-12
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
