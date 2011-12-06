@@ -1,6 +1,6 @@
 Name:           etherape
 Version:        0.9.12
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -78,6 +78,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Tue Dec 06 2011 Adam Jackson <ajax@redhat.com> - 0.9.12-2
+- Rebuild for new libpng
+
 * Mon Jul 18 2011 Jan F. Chadima <jchadima@redhat.com> 0.9.12-1
 - Upgrade to 0.9.12
 
