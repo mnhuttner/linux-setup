@@ -1,7 +1,7 @@
 %define _hardened_build 1
 Name:           etherape
 Version:        0.9.12
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -43,7 +43,7 @@ mkdir -p $RPM_BUILD_ROOT/%{_bindir}
 ln -s consolehelper $RPM_BUILD_ROOT/%{_bindir}/etherape
 
 %find_lang %{name}
-desktop-file-install --vendor "fedora"  --dir ${RPM_BUILD_ROOT}%{_datadir}/applications \
+desktop-file-install --dir ${RPM_BUILD_ROOT}%{_datadir}/applications \
     ${RPM_BUILD_ROOT}%{_datadir}/applications/etherape.desktop
 
 rm $RPM_BUILD_ROOT/%{_datadir}/applications/etherape.desktop
@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}
 %{_datadir}/gnome/help/%{name}/
 %{_datadir}/%{name}/
-%{_datadir}/applications/fedora-etherape.desktop
+%{_datadir}/applications/etherape.desktop
 %{_datadir}/pixmaps/etherape.png
 %dir %{_datadir}/omf/etherape
 %{_datadir}/omf/etherape/etherape-C.omf
@@ -79,6 +79,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Mon Feb 11 2013 Jon Ciesla <limburgher@gmail.com> - 0.9.12-6
+- Drop desktop vendor tag.
+
 * Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.12-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
