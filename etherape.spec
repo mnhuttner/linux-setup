@@ -46,8 +46,6 @@ ln -s consolehelper $RPM_BUILD_ROOT/%{_bindir}/etherape
 desktop-file-install --dir ${RPM_BUILD_ROOT}%{_datadir}/applications \
     ${RPM_BUILD_ROOT}%{_datadir}/applications/etherape.desktop
 
-rm $RPM_BUILD_ROOT/%{_datadir}/applications/etherape.desktop
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
