@@ -1,13 +1,13 @@
 %define _hardened_build 1
 Name:           etherape
-Version:        0.9.12
-Release:        6%{?dist}
+Version:        0.9.13
+Release:        1%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
 License:        GPLv2+
 URL:            http://etherape.sourceforge.net/
-Source0:        http://umn.dl.sourceforge.net/sourceforge/etherape/%{name}-%{version}.tar.gz
+Source0:        http://downloads.sourceforge.net/sourceforge/etherape/%{name}-%{version}.tar.gz
 Source1:        etherape.pam
 Source2:        etherape.console
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -77,6 +77,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Tue May 07 2013 Jon Ciesla <limburgher@gmail.com> - 0.9.13-1
+- 0.9.13, BZ 960395.
+
 * Mon Feb 11 2013 Jon Ciesla <limburgher@gmail.com> - 0.9.12-6
 - Drop desktop vendor tag.
 
