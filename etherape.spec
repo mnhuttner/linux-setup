@@ -1,7 +1,7 @@
 %define _hardened_build 1
 Name:           etherape
 Version:        0.9.13
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -77,6 +77,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.13-5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Sat Aug 16 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.9.13-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
