@@ -1,7 +1,7 @@
 %define _hardened_build 1
 Name:           etherape
-Version:        0.9.13
-Release:        6%{?dist}
+Version:        0.9.14
+Release:        1%{?dist}
 Summary:        Graphical network monitor for Unix
 
 Group:          Applications/System
@@ -56,8 +56,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{_bindir}/etherape
 %{_sbindir}/etherape
-%dir %{_sysconfdir}/%{name}
-%config(noreplace) %{_sysconfdir}/%{name}/services
+#%%dir %%{_sysconfdir}/%%{name}
+#%%config(noreplace) %%{_sysconfdir}/%%{name}/services
 %config(noreplace) %{_sysconfdir}/pam.d/etherape
 %config(noreplace) %{_sysconfdir}/security/console.apps/etherape
 %dir %{_datadir}/%{name}
@@ -77,6 +77,9 @@ scrollkeeper-update -q || :
 
 
 %changelog
+* Sat Feb 06 2016 Jon Ciesla <limburgher@gmail.com> - 0.9.14-1
+- 0.9.14, BZ 1305314.
+
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.9.13-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
