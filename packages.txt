@@ -12,3 +12,4 @@ xhost
 xterm
 facter
 htop
+puppet
