@@ -9,6 +9,7 @@ yum -y install https://kojipkgs.fedoraproject.org//packages/system-config-lvm/1.
 for i in $(cat packages.txt) ; do
   yum -y install $i
 done
+yum clean all
 
 cp .bashrc .vimrc ~/
 cp -R .config ~/
