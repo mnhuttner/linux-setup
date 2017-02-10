@@ -1,0 +1,9 @@
+xhost
+xterm
+xhost
+firefox
+lynx
+dig
+gkrellm
+
+python-pip
