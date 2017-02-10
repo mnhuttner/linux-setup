@@ -1,6 +1,7 @@
 xhost
 xterm
 xhost
+xauth
 firefox
 lynx
 dig
@@ -9,3 +10,4 @@ python-pip
 cpanminus
 dpkg
 system-storage-manager
+xauth
