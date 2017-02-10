@@ -10,3 +10,6 @@ for i in $(cat packages.txt) ; do
   yum -y install $i
 done
 
+cp .bashrc .vimrc ~/
+cp -R .config ~/
+
