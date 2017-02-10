@@ -14,3 +14,4 @@ yum clean all
 cp .bashrc .vimrc ~/
 cp -R .config ~/
 
+pip install --upgrade pip
