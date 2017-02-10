@@ -2,6 +2,7 @@
 [ -z "$PS1" ] && return
 
 set -o vi
+alias vi=vim
 export PATH=.:$PATH
 
 alias ag='apt-get -y install '
