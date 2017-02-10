@@ -7,3 +7,5 @@ dig
 gkrellm
 python-pip
 cpanminus
+dpkg
+system-storage-manager
