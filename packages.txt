@@ -10,3 +10,4 @@ system-storage-manager
 xauth
 xhost
 xterm
+facter
