@@ -5,5 +5,5 @@ firefox
 lynx
 dig
 gkrellm
-
 python-pip
+cpanminus
