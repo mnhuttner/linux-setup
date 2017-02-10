@@ -11,3 +11,4 @@ xauth
 xhost
 xterm
 facter
+htop
